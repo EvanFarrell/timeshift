@@ -2,26 +2,30 @@
   <title>Evan Farrell</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="formlogic.js"></script>
 </head>
 
 <body>
     <div class="agenda-container red">
-
         <div class="timeblock-row">
+
           <span class="time-text-container green row-item">
             <p class="time-text row-text">12:00</p>
           </span>
+
           <span class="current-task-container white row-item">
             <p class="current-task row-text">Some task goes here</p>
           </span>
+
           <span class="new-task-form-container red row-item">
-            <form>
-              <input type="text" name="item">
+            <form id='new-item-form' method=POST>
+              <input type="text" name="item-name">
               <button type="submit"></button>
             </form>
           </span>
-        </div>
 
+        </div>
     </div>
 </body>
