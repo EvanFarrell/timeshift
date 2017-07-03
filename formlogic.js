@@ -1,19 +1,15 @@
-var script = document.createElement('script');
-script.src = '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js';
-script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);
-
 $(document).ready(function() {
 
-    // process the form
-    $('#form').submit(function(event) {
+    $('#new-task-form').submit(function(event) {
+        event.preventDefault();
 
         var formData = {
-            'item-name' : $('input[name=item-name]').val(),
+            'task-name' : $('input[name=task-name]').val(),
         };
 
         $.ajax({
             type: 'POST',
+            url: event.currentTarget.action,
             data: formData,
             dataType: 'json',
             encode: true
@@ -22,7 +18,7 @@ $(document).ready(function() {
                alert(data);
             });
 
-        event.preventDefault();
+
     });
 
 });
